@@ -12,6 +12,9 @@ formulario.addEventListener('submit', (ev) => {
 	if(monedaSelect === '' || criptomonedaSelect === ''){
 		ui.mostrarMensaje('Faltan datos por completar', 'alert bg-danger text-center');
 	}else{
-		//llamo a la API
+		cotizador.obtenerValores(monedaSelect, criptomonedaSelect)
+			.then(data => {
+				console.log(data);
+			})
 	}
 })
